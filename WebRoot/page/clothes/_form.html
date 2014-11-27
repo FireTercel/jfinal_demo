@@ -1,0 +1,31 @@
+<fieldset class="solid">
+	<legend>创建Cloth</legend>
+	<input type="hidden" name="clothes.id" value="${(clothes.id)!}" />
+	<div>
+		<label>名称</label>
+		<input type="text" name="clothes.clothname" value="${(clothes.clothname)!}" />${clothnameMsg!}
+	</div>
+	<div>
+		<label>价格</label>
+		<input type="text" name="clothes.price" value="${(clothes.price)!}" />${priceMsg!}
+	</div>
+	<div>
+		<label>描述</label>
+		<textarea name="clothes.description" cols="80" rows="10">${(clothes.description)!}</textarea>${descriptionMsg!}
+		<br/>
+	</div>
+	<div>
+		<label>评论</label>
+		<textarea name="clothes.commant" cols="80" rows="10">${(clothes.commant)!}</textarea>${commantMsg!}
+		<br/>
+	</div>
+	<div>
+		<label>上传时间</label>
+		<input type="text" name="clothes.uploadtime" value="${(clothes.uploadtime)!}" />${uploadtimeMsg!}
+	</div>
+	
+	<div>
+		<label>&nbsp;</label>
+		<input value="提交" type="submit">
+	</div>
+</fieldset>

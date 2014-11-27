@@ -1,0 +1,45 @@
+<#include "/page/common/_layout.html"/>
+<@layout>
+<h1>Clothes管理&nbsp;&nbsp;
+<a href="${contextPath}/clothes/add">创建Clothes</a>&nbsp;&nbsp;
+<a href="${contextPath}/clothes/clothbootstrap">Bootstrap演示</a>&nbsp;&nbsp;
+<a href="${contextPath}/clothes/list">Ehcache缓存演示</a>
+</h1>
+<div class="table_box">
+	<h1>Hello,world!</h1>
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="${contextPath}/plugin/bootstrap/js/bootstrap.min.js"></script>
+	<table class="list">
+		<tbody>
+			<tr>
+				<th width="4%">id</th>
+				<th width="12%">名称</th>
+				<th width="12%">价格</th>
+				<th width="12%">描述</th>
+				<th width="12%">评论</th>
+				<th width="12%">上传时间</th>
+				<th width="4%">标识</th>
+				<th width="12%">操作</th>
+			</tr>
+			
+			<#list clothPage.getList() as x>
+			<tr>
+				<td style="text-align:left;">${x.id}</td>
+				<td style="text-align:left;">${x.clothname}</td>
+				<td style="text-align:left;">${x.price}</td>
+				<td style="text-align:left;">${x.description}</td>
+				<td style="text-align:left;">${x.commant}</td>
+				<td style="text-align:left;">${x.uploadtime}</td>
+				<td style="text-align:left;">${x.flag}</td>
+				<td style="text-align:left;">
+					&nbsp;&nbsp;<a href="${contextPath}/clothes/delete/${x.id}">删除</a>
+					&nbsp;&nbsp;<a href="${contextPath}/clothes/edit/${x.id}">修改</a>
+				</td>
+			</tr>
+			</#list>
+		</tbody>
+	</table>
+	<#include "/page/common/_paginate.html" />
+	<@paginate currentPage=clothPage.pageNumber totalPage=clothPage.totalPage actionUrl="/clothes/" />
+</div>
+</@layout>

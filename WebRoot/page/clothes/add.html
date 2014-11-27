@@ -1,0 +1,11 @@
+<#include "/page/common/_layout.html" />
+<@layout>
+<h1>Clohtes管理 ---&gt; 创建Cloth
+</h1>
+<div class="form_box">
+	<!-- ${contextPath}代表上写文、/blog代表控制器、/save代表控制器中的方法 -->
+	<form action="${contextPath}/clothes/save" method="post">
+		<#include "_form.html" />
+	</form>
+</div>
+</@layout>
